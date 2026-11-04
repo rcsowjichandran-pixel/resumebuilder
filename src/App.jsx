@@ -328,9 +328,9 @@ function App() {
         format: 'a4',
       });
 
-      const primaryColor = [30, 58, 138]; // Deep Navy (#1e3a8a)
-      const textColor = [31, 41, 55]; // Gray-800
-      const mutedColor = [100, 116, 139]; // Slate-500
+      const primaryColor = [109, 94, 182]; // Soft violet (#6d5eb6)
+      const textColor = [55, 65, 81]; // Slate-700
+      const mutedColor = [138, 100, 123]; // Dusty rose
       let currentY = 20;
 
       // ------------------------------------------
@@ -531,14 +531,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 py-8 px-4 lg:px-8">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(251,191,36,0.18),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(167,139,250,0.18),_transparent_35%),linear-gradient(135deg,_#fffaf6_0%,_#f4f7ff_42%,_#f5fff9_100%)] py-8 px-4 lg:px-8">
       {/* Top Header */}
-      <header className="max-w-7xl mx-auto mb-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
+      <header className="max-w-7xl mx-auto mb-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-rose-200/80 pb-4">
         <div>
-          <h1 className="text-3xl font-black text-slate-800 tracking-tight flex items-center gap-2">
-            📄 AI Resume Builder
+          <h1 className="text-3xl font-black text-violet-900 tracking-tight flex items-center gap-2">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-rose-200 via-amber-100 to-violet-200 shadow-sm">
+              📄
+            </span>
+            AI Resume Builder
           </h1>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-violet-700/80">
             Design your resume, generate AI summaries & skills, and export to PDF.
           </p>
         </div>
@@ -547,7 +550,7 @@ function App() {
         <button
           type="button"
           onClick={handleExportPDF}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform active:scale-95 cursor-pointer text-sm"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-400 to-violet-500 hover:from-rose-500 hover:to-violet-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform active:scale-95 cursor-pointer text-sm"
         >
           <span>📥</span>
           <span>Export to PDF</span>
@@ -561,9 +564,9 @@ function App() {
         {/* ======================================================== */}
         <div className="lg:col-span-6 space-y-6">
           {/* Section 1: Personal Information */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
-              <span className="text-blue-600">👤</span> Personal Information
+          <div className="bg-gradient-to-br from-white via-rose-50/60 to-violet-50/90 p-5 rounded-2xl border border-rose-200/80 shadow-[0_14px_30px_rgba(196,181,253,0.15)]">
+            <h2 className="text-base font-bold text-violet-900 mb-3 flex items-center gap-2">
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-rose-100 text-rose-600">👤</span> Personal Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               <div>
@@ -609,17 +612,17 @@ function App() {
           </div>
 
           {/* Section 2: Step 10 & 11: AI-Powered Summary Form */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <div className="bg-gradient-to-br from-white via-violet-50/70 to-rose-50/80 p-5 rounded-2xl border border-violet-200/80 shadow-[0_14px_30px_rgba(196,181,253,0.15)]">
             <div className="flex items-center justify-between mb-2">
-              <h2 className="text-base font-bold text-slate-800 flex items-center gap-2">
-                <span className="text-purple-600">✨</span> AI Professional Summary
+              <h2 className="text-base font-bold text-violet-900 flex items-center gap-2">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-violet-100 text-violet-600">✨</span> AI Professional Summary
               </h2>
               {/* Step 11: Generate Summary Button */}
               <button
                 type="button"
                 onClick={generateSummary}
                 disabled={isGeneratingSummary}
-                className="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg shadow transition flex items-center gap-1 cursor-pointer"
+                className="px-3 py-1.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 disabled:opacity-50 text-white text-xs font-semibold rounded-lg shadow transition flex items-center gap-1 cursor-pointer"
               >
                 {isGeneratingSummary ? '⚡ Generating...' : '✨ Generate Summary'}
               </button>
@@ -857,9 +860,9 @@ function App() {
           </div>
 
           {/* Section 5: Skills & AI Suggestions */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
-              <span className="text-amber-500">⚡</span> Skills & AI Suggestions
+          <div className="bg-gradient-to-br from-white via-amber-50/80 to-emerald-50/80 p-5 rounded-2xl border border-amber-200/80 shadow-[0_14px_30px_rgba(253,224,71,0.12)]">
+            <h2 className="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-amber-100 text-amber-600">⚡</span> Skills & AI Suggestions
             </h2>
 
             {/* Input to add skill */}
@@ -960,26 +963,29 @@ function App() {
           </div>
 
           {/* Step 1: Template Container with clean white background, padding, subtle border */}
-          <div className="bg-white rounded-xl shadow-xl border border-slate-200 p-8 md:p-10 font-sans text-slate-800 transition">
-            {/* Step 2: Header Section (Name in large, bold font; email & phone below in smaller font) */}
-            <div className="text-center pb-5 mb-5 border-b-2 border-slate-800">
-              <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-2 uppercase">
-                {resumeData.personalInfo.name || 'YOUR NAME'}
-              </h1>
-              <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm text-slate-600 font-medium">
-                {resumeData.personalInfo.email && (
-                  <span className="flex items-center gap-1">
-                    ✉️ {resumeData.personalInfo.email}
-                  </span>
-                )}
-                {resumeData.personalInfo.email && resumeData.personalInfo.phone && (
-                  <span>•</span>
-                )}
-                {resumeData.personalInfo.phone && (
-                  <span className="flex items-center gap-1">
-                    📞 {resumeData.personalInfo.phone}
-                  </span>
-                )}
+          <div className="relative overflow-hidden rounded-[28px] border border-violet-200 bg-gradient-to-br from-[#fffaf5] via-[#fef3f9] to-[#f3f8ff] p-8 shadow-[0_30px_60px_rgba(167,139,250,0.18)] md:p-10 font-sans text-slate-800 transition">
+            <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-rose-200/60 blur-2xl" />
+            <div className="absolute -left-10 bottom-10 h-24 w-24 rounded-full bg-emerald-200/60 blur-2xl" />
+            <div className="relative">
+              <div className="mb-5 rounded-2xl border border-violet-200 bg-gradient-to-r from-[#f3e8ff] via-[#fff7ed] to-[#ecfeff] px-4 py-5 text-center shadow-inner">
+                <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-2 uppercase text-violet-900">
+                  {resumeData.personalInfo.name || 'YOUR NAME'}
+                </h1>
+                <div className="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm text-violet-700 font-medium">
+                  {resumeData.personalInfo.email && (
+                    <span className="flex items-center gap-1">
+                      ✉️ {resumeData.personalInfo.email}
+                    </span>
+                  )}
+                  {resumeData.personalInfo.email && resumeData.personalInfo.phone && (
+                    <span>•</span>
+                  )}
+                  {resumeData.personalInfo.phone && (
+                    <span className="flex items-center gap-1">
+                      📞 {resumeData.personalInfo.phone}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -987,10 +993,10 @@ function App() {
             {resumeSummary.trim() && (
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-violet-900">
                     Professional Summary
                   </h3>
-                  <div className="flex-1 h-px bg-slate-200"></div>
+                  <div className="flex-1 h-px bg-violet-200"></div>
                 </div>
                 {/* Step 4: Display AI-generated professional summary in dedicated paragraph */}
                 <p className="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
@@ -1003,10 +1009,10 @@ function App() {
             {resumeData.experience.length > 0 && (
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-violet-900">
                     Work Experience
                   </h3>
-                  <div className="flex-1 h-px bg-slate-200"></div>
+                  <div className="flex-1 h-px bg-violet-200"></div>
                 </div>
 
                 {/* Step 5: map() over experience state array */}
@@ -1043,10 +1049,10 @@ function App() {
             {resumeData.education.length > 0 && (
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-violet-900">
                     Education
                   </h3>
-                  <div className="flex-1 h-px bg-slate-200"></div>
+                  <div className="flex-1 h-px bg-violet-200"></div>
                 </div>
 
                 <div className="space-y-3">
@@ -1076,17 +1082,17 @@ function App() {
             {skills.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-violet-900">
                     Skills & Competencies
                   </h3>
-                  <div className="flex-1 h-px bg-slate-200"></div>
+                  <div className="flex-1 h-px bg-violet-200"></div>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5">
                   {skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-2.5 py-1 bg-slate-100 text-slate-800 text-xs font-medium rounded border border-slate-200"
+                      className="px-2.5 py-1 bg-gradient-to-r from-rose-50 to-violet-50 text-violet-800 text-xs font-medium rounded-full border border-violet-200"
                     >
                       {skill}
                     </span>
